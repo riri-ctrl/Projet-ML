@@ -42,7 +42,9 @@ def gestion_profession_nan(dataset):
     dataset["Profession"] = dataset["Profession"].fillna("Unknown") #ne pas indiqué son job alors qu'il travaille peut être un signe de dépression
     return dataset
 
-
+def gestion_financial_stress_nan(dataset):
+    dataset= dataset.dropna(subset=["Financial Stress"])
+    return dataset
 
 def plus_frequent(liste,dataset):
     imputer= SimpleImputer(strategy='most_frequent')
@@ -52,18 +54,16 @@ def plus_frequent(liste,dataset):
     
 
 
-"""
+
 def value_col(dataset):
     for col in dataset:
         print(dataset[col].value_counts())
 
-value_col(dataset)
+
     
-    connaitre les valeurs de chaque colonne du dataset ainsi que les plus présente
+   # connaitre les valeurs de chaque colonne du dataset ainsi que les plus présente
     
-pd.set_option("display.max_rows", None)
-print(dataset["Profession"].value_counts())
-"""
+
 def gestion_bruit_encoder (dataset):
     top4 = [
         "Less than 5 hours",
@@ -81,7 +81,7 @@ def gestion_bruit_encoder (dataset):
         "More than 8 hours": 3
     }
     
-    dataset["Sleep_Duration"] = dataset["Sleep Duration"].map(mapping)
+    dataset["Sleep Duration"] = dataset["Sleep Duration"].map(mapping)
     
     top3 =[
            "Moderate",
@@ -127,7 +127,7 @@ def print_info(dataset):
     print(dataset.select_dtypes(include=['object', 'string', 'int', 'float', 'bool']).isnull().sum())
 
 def main():
-    dataset=pd.read_csv('test.csv')
+    dataset=pd.read_csv("d:/xampp/htdocs/ml_2026/train.csv")
     
     dataset=drop_col(dataset)
     
@@ -135,16 +135,26 @@ def main():
     
     dataset=gestion_profession_nan(dataset)
     
+    dataset=gestion_financial_stress_nan(dataset) 
+    
     dataset = plus_frequent(["Degree","Dietary Habits"],dataset)
     
     dataset=gestion_bruit_encoder(dataset)
     
     dataset=gestion_bruit(["Degree","Profession"],dataset)
     
+    print(value_col(dataset))
+    
     dataset = categorical_features(dataset)
+    print(value_col(dataset))
     
     print_info(dataset)
     
+    
+    
+    return dataset
+    
 if __name__ == "__main__":
+    
     main()
     

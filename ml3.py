@@ -2,7 +2,7 @@
 """
 Created on Thu Apr 30 23:33:52 2026
 
-@author: grabe
+@author: grabe et manu
 """
 
 

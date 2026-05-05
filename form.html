@@ -1,0 +1,276 @@
+    <title>Mon Formulaire</title>
+    <style>
+        body{
+            border:3px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('form') }}">Formulaire</a></li>
+            <li><a href="{{ url_for('graphe') }}">Graphes</a></li>
+            <li><a href="https://www.kaggle.com/competitions/playground-series-s4e11/data?select=train.csv" target="_blank"> Lien database</a></li>
+        </ul>
+    </nav>
+<h1>Mon Formulaire</h1>
+
+<form action="/predict" method="POST">
+    
+
+    <!-- AGE -->
+    <label>Quel est votre âge ?</label>
+    <select name="age">
+        <option value=18>18</option>
+        <option value=19>19</option>
+        <option value=20>20</option>
+        <option value=21>21</option>
+        <option value=22>22</option>
+        <option value=23>23</option>
+        <option value=24>24</option>
+        <option value=25>25</option>
+        <option value=26>26</option>
+        <option value=27>27</option>
+        <option value=28>28</option>
+        <option value=29>29</option>
+        <option value=30>30</option>
+        <option value=31>31</option>
+        <option value=32>32</option>
+        <option value=33>33</option>
+        <option value=34>34</option>
+        <option value=35>35</option>
+        <option value=36>36</option>
+        <option value=37>37</option>
+        <option value=38>38</option>
+        <option value=39>39</option>
+        <option value=40>40</option>
+        <option value=41>41</option>
+        <option value=42>42</option>
+        <option value=43>43</option>
+        <option value=44>44</option>
+        <option value=45>45</option>
+        <option value=46>46</option>
+        <option value=47>47</option>
+        <option value=48>48</option>
+        <option value=49>49</option>
+        <option value=50>50</option>
+        <option value=51>51</option>
+        <option value=52>52</option>
+        <option value=53>53</option>
+        <option value=54>54</option>
+        <option value=55>55</option>
+        <option value=56>56</option>
+        <option value=57>57</option>
+        <option value=58>58</option>
+        <option value=59>59</option>
+        <option value=60>60</option>
+    </select>
+    <br/><br/>
+
+    <!-- ETUDIANT / TRAVAILLEUR -->
+    <label>Vous êtes étudiant ou travailleur ?</label><br/>
+    <input type="radio" name="professional_or_student" value="0" id="status_student" required>
+    <label for="status_student">Étudiant</label>
+
+    <input type="radio" name="professional_or_student" value="1" id="status_worker">
+    <label for="status_worker">Travailleur</label>
+    <br/><br/>
+
+
+    <!-- CSP -->
+    <label>A quelle catégorie professionnelle appartenez-vous ?</label>
+    <select name="profession">
+        <option value=32>Student</option>
+        <option value=33>Teacher</option>
+        <option value=36>Autre/Unknown</option>
+        <option value=7>Content Writer</option>
+        <option value=1>Architect</option>
+        <option value=6>Consultant</option>
+        <option value=18>HR Manager</option>
+        <option value=25>Pharmacist</option>
+        <option value=11>Doctor</option>
+        <option value=2>Business Analyst</option>
+        <option value=14>Entrepreneur</option>
+        <option value=4>Chemist</option>
+        <option value=3>Chef</option>
+        <option value=12>Educational Consultant</option>
+        <option value=9>Data Scientist</option>
+        <option value=29>Researcher</option>
+        <option value=21>Lawyer</option>
+        <option value=8>Customer Support</option>
+        <option value=23>Marketing Manager</option>
+        <option value=26>Pilot</option>
+        <option value=34>Travel Consultant</option>
+        <option value=27>Plumber</option>
+        <option value=30>Sales Executive</option>
+        <option value=22>Manager</option>
+        <option value=20>Judge</option>
+        <option value=13>Electrician</option>
+        <option value=16>Financial Analyst</option>
+        <option value=31>Software Engineer</option>
+        <option value=5>Civil Engineer</option>
+        <option value=35>UX/UI Designer</option>
+        <option value=10>Digital Marketer</option>
+        <option value=0>Accountant</option>
+        <option value=15>Financial Analyst</option>
+        <option value=24>Mechanical Engineer</option>
+        <option value=17>Graphic Designer</option>
+        <option value=28>Research Analyst</option>
+        <option value=19>Investment Banker</option>
+    </select>
+    <br/><br/>
+
+
+    <!-- HEURES DE TRAVAIL -->
+    <label>Combien d'heures travaillez-vous par jour ?</label><br/>
+
+    <input type="radio" name="work_hours" value="0" id="h0"required>
+    <label for="h0">0 h</label>
+
+    <input type="radio" name="work_hours" value="1" id="h1">
+    <label for="h1">1 h</label>
+
+    <input type="radio" name="work_hours" value="2" id="h2">
+    <label for="h2">2 h</label>
+
+    <input type="radio" name="work_hours" value="3" id="h3">
+    <label for="h3">3 h</label>
+
+    <input type="radio" name="work_hours" value="4" id="h4">
+    <label for="h4">4 h</label>
+
+    <input type="radio" name="work_hours" value="5" id="h5">
+    <label for="h5">5 h</label>
+
+    <input type="radio" name="work_hours" value="6" id="h6">
+    <label for="h6">6 h</label>
+
+    <input type="radio" name="work_hours" value="7" id="h7">
+    <label for="h7">7 h</label>
+
+    <input type="radio" name="work_hours" value="8" id="h8">
+    <label for="h8">8 h</label>
+
+    <input type="radio" name="work_hours" value="9" id="h9">
+    <label for="h9">9 h</label>
+
+    <input type="radio" name="work_hours" value="10" id="h10">
+    <label for="h10">10 h</label>
+
+    <input type="radio" name="work_hours" value="11" id="h11">
+    <label for="h11">11 h</label>
+
+    <input type="radio" name="work_hours" value="12" id="h12">
+    <label for="h12">12 h</label>
+    <br/><br/>
+
+    
+
+    <!-- ALIMENTATION -->
+    <label>Comment noteriez-vous vos habitudes alimentaires ?</label><br/>
+    <input type="radio" name="dietary_habits" value="0" id="diet_bad"required>
+    <label for="diet_bad">Pas saine</label>
+
+    <input type="radio" name="dietary_habits" value="1" id="diet_normal">
+    <label for="diet_normal">Normale</label>
+
+    <input type="radio" name="dietary_habits" value="2" id="diet_good">
+    <label for="diet_good">Saine</label>
+    <br/><br/>
+
+
+    <!-- STRESS FINANCIER -->
+    <label>Comment noteriez-vous votre stress financier ?</label><br/>
+
+    <input type="radio" name="financial_stress" value="1" id="stress1"required>
+    <label for="stress1">1</label>
+
+    <input type="radio" name="financial_stress" value="2" id="stress2">
+    <label for="stress2">2</label>
+
+    <input type="radio" name="financial_stress" value="3" id="stress3">
+    <label for="stress3">3</label>
+
+    <input type="radio" name="financial_stress" value="4" id="stress4">
+    <label for="stress4">4</label>
+
+    <input type="radio" name="financial_stress" value="5" id="stress5">
+    <label for="stress5">5</label>
+    <br/><br/>
+
+
+     <!-- PRESSION QUOTIDIENNE -->
+    <label>Comment noteriez-vous la pression quotidienne ?</label><br/>
+
+    <input type="radio" name="pressure" value="0" id="pressure0"required>
+    <label for="pressure0">0</label>
+
+    <input type="radio" name="pressure" value="1" id="pressure1">
+    <label for="pressure1">1</label>
+
+    <input type="radio" name="pressure" value="2" id="pressure2">
+    <label for="pressure2">2</label>
+
+    <input type="radio" name="pressure" value="3" id="pressure3">
+    <label for="pressure3">3</label>
+
+    <input type="radio" name="pressure" value="4" id="pressure4">
+    <label for="pressure4">4</label>
+
+    <input type="radio" name="pressure" value="5" id="pressure5">
+    <label for="pressure5">5</label>
+    <br/><br/>
+
+
+    <!-- SATISFACTION -->
+    <label>Comment noteriez-vous votre satisfaction globale ?</label><br/>
+
+    <input type="radio" name="satisfaction" value="0" id="sat0"required>
+    <label for="sat0">0</label>
+
+    <input type="radio" name="satisfaction" value="1" id="sat1">
+    <label for="sat1">1</label>
+
+    <input type="radio" name="satisfaction" value="2" id="sat2">
+    <label for="sat2">2</label>
+
+    <input type="radio" name="satisfaction" value="3" id="sat3">
+    <label for="sat3">3</label>
+
+    <input type="radio" name="satisfaction" value="4" id="sat4">
+    <label for="sat4">4</label>
+
+    <input type="radio" name="satisfaction" value="5" id="sat5">
+    <label for="sat5">5</label>
+
+    <input type="radio" name="satisfaction" value="6" id="sat6">
+    <label for="sat6">6</label>
+
+    <input type="radio" name="satisfaction" value="7" id="sat7">
+    <label for="sat7">7</label>
+    <br/><br/>
+
+    <!-- PENSÉES SUICIDAIRES -->
+    <label>Est-ce que vous avez déjà eu des pensées suicidaires ?</label><br/>
+    <input type="radio" name="suicidal_thoughts" value="0" id="suicidal_no" required>
+    <label for="suicidal_no">Non</label>
+
+    <input type="radio" name="suicidal_thoughts" value="1" id="suicidal_yes">
+    <label for="suicidal_yes">Oui</label>
+    <br/><br/>    
+
+   
+
+    <input type="submit" value="Envoyer">
+    
+    
+</form>
+    <br/><br/><br/>
+    {% if proba is defined %}
+    <h2>Résultat :</h2>
+    <p>Probabilité : {{ proba }}</p>
+    <p>Prédiction : {{ pred }}</p>
+    {% endif %}
+</body>
+</html>

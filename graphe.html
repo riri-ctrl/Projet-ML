@@ -1,0 +1,93 @@
+<html>
+<head>    
+    <title>Mon Formulaire</title>
+    <style>
+        body{
+            border:3px black solid;
+            background-color: rgb(213, 212, 212);
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('form') }}">Formulaire</a></li>
+        <li><a href="{{ url_for('graphe') }}">Graphes</a></li>
+    </ul>
+</nav>
+
+<h1>Répartition des données</h1>
+
+<h2>Depression</h2>
+<img src="{{ url_for('static', filename='images/repartition_depression.png') }}" width="800">
+
+<h2>Age</h2>
+<img src="{{ url_for('static', filename='images/repartition_age.png') }}" width="800">
+
+<h2>Etudiant ou Travailleur</h2>
+<img src="{{ url_for('static', filename='images/repartition_student.png') }}" width="800">
+
+<h2>Antécédent</h2>
+<img src="{{ url_for('static', filename='images/repartition_antecedent.png') }}" width="800">
+
+<h2>Habitudes alimentaires</h2>
+<img src="{{ url_for('static', filename='images/repartition_habitude_alimentaire.png') }}" width="800">
+
+<h2>Pression</h2>
+<img src="{{ url_for('static', filename='images/repartition_pressure.png') }}" width="800">
+
+<h2>Satisfaction</h2>
+<img src="{{ url_for('static', filename='images/repartition_satisfaction.png') }}" width="800">
+
+<h2>Stress Financier</h2>
+<img src="{{ url_for('static', filename='images/repartition_stress_finance.png') }}" width="800">
+
+<h2>Pensées suicidaires</h2>
+<img src="{{ url_for('static', filename='images/repartition_pensee_suicidaire.png') }}" width="800">
+
+<br><br>
+
+<h1>Graphes ML</h1>
+
+<h2>Boite à moustache</h2>
+<img src="{{ url_for('static', filename='images/boite_moustache.png') }}" width="800">
+
+<h2>Matrice de corrélation</h2>
+<p>Matrice de corrélation de toutes les colonnes</p>
+<img src="{{ url_for('static', filename='images/matrice_cor_global.png') }}" width="800">
+
+<p>Matrice de corrélation des features importantes</p>
+<img src="{{ url_for('static', filename='images/matrice_cor_bestfeature.png') }}" width="800">
+
+<h2>Feature importance</h2>
+<p>Feature importance de toutes les colonnes</p>
+<img src="{{ url_for('static', filename='images/barth_global.png') }}" width="800">
+
+<p>Feature importance des features importantes</p>
+<img src="{{ url_for('static', filename='images/barth_bestfeature.png') }}" width="800">
+
+<h2>Courbe ROC</h2>
+<img src="{{ url_for('static', filename='images/courbe_ROC.png') }}" width="800">
+
+<h2>Matrice de confusion</h2>
+
+<p>Seuil = 0.3</p>
+<img src="{{ url_for('static', filename='images/matrice_conf03.png') }}" width="800">
+
+<p>Seuil = 0.4</p>
+<img src="{{ url_for('static', filename='images/matrice_conf04.png') }}" width="800">
+
+<p>Seuil = 0.5</p>
+<img src="{{ url_for('static', filename='images/matrice_conf05.png') }}" width="800">
+
+<p>Seuil = 0.6</p>
+<img src="{{ url_for('static', filename='images/matrice_conf06.png') }}" width="800">
+
+</body>
+</html>
